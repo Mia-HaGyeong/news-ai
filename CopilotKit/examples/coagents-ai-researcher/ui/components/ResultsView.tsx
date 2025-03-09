@@ -55,7 +55,7 @@ export function ResultsView() {
               ) : (
                 <SparkleIcon className="w-4 h-4 text-slate-500" />
               )}
-              Answer
+              K-인사이트 답변
             </h2>
             <div className="text-slate-500 font-light">
               {isLoading ? (
@@ -70,7 +70,7 @@ export function ResultsView() {
             <div className="flex col-span-12 lg:col-span-4 flex-col gap-y-4 w-[200px]">
               <h2 className="flex items-center gap-x-2">
                 <BookOpenIcon className="w-4 h-4 text-slate-500" />
-                References
+                출처
               </h2>
               <ul className="text-slate-900 font-light text-sm flex flex-col gap-y-2">
                 {agentState?.answer?.references?.map(

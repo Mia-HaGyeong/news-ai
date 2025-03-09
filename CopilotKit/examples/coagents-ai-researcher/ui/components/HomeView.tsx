@@ -39,10 +39,10 @@ export function HomeView() {
   };
 
   const suggestions = [
-    { label: "Electric cars sold in 2024 vs 2023", icon: "🚙" },
-    { label: "Top 10 richest people in the world", icon: "💰" },
-    { label: "Population of the World", icon: "🌍 " },
-    { label: "Weather in Seattle VS New York", icon: "⛅️" },
+    { label: "2024년 전기차 판매량", icon: "🚙" },
+    { label: "전 세계에서 가장 부유한 인물 10명", icon: "💰" },
+    { label: "전 세계 인구 수", icon: "🌍 " },
+    { label: "서울 날씨와 뉴욕 날씨 비교", icon: "⛅️" },
   ];
 
   return (
@@ -53,9 +53,12 @@ export function HomeView() {
       transition={{ duration: 0.4 }}
       className="h-screen w-full flex flex-col gap-y-2 justify-center items-center p-4 lg:p-0"
     >
-      <h1 className="text-4xl font-extralight mb-6">
-        What would you like to know?
+      <h1 className="text-4xl font-extralight mb-1">
+        K-인사이트
       </h1>
+      <p className="text-1xl font-extralight mb-6">
+        AI 기반 맞춤형 브리핑 및 대화형 검색
+      </p>
 
       <div
         className={cn(

@@ -26,14 +26,30 @@ export function ResearchWrapper() {
             </AnimatePresence>
           )}
         </div>
-        <footer className="text-xs p-2">
+        <footer className="flex flex-wrap justify-center gap-5 pb-5 text-xs text-slate-600 font-medium">
           <a
-            href="https://copilotkit.ai"
+            href="https://babelbrain.net/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-600 font-medium hover:underline"
+            className="hover:underline"
           >
-            Powered by CopilotKit 🪁
+            © 2025 BabelBrain. All rights reserved.
+          </a>
+          <a
+            href="https://babelbrain.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            개인정보처리방침
+          </a>
+          <a
+            href="https://babelbrain.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            이용약관
           </a>
         </footer>
       </div>
