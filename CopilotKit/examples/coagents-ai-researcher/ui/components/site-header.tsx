@@ -1,6 +1,6 @@
 "use client"
 
-import { SidebarIcon } from "lucide-react"
+import { SidebarIcon, FilePlus } from "lucide-react"
 
 import { SearchForm } from "@/components/search-form"
 import {
@@ -29,20 +29,25 @@ export function SiteHeader() {
         >
           <SidebarIcon />
         </Button>
-        <Separator orientation="vertical" className="mx-1 h-4" />
-        <Breadcrumb className="hidden sm:block">
+        <Button
+          className="h-8 w-8"
+          variant="ghost"
+          size="icon">
+          <FilePlus />
+        </Button>
+        {/* <Separator orientation="vertical" className="mx-1 h-4" /> */}
+        {/* <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="#" className="text-xl mb-1">
-              +
               </BreadcrumbLink>
             </BreadcrumbItem>
-            {/* <BreadcrumbSeparator /> */}
-            {/* <BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
               <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-            </BreadcrumbItem> */}
+            </BreadcrumbItem>
           </BreadcrumbList>
-        </Breadcrumb>
+        </Breadcrumb> */}
         {/* <SearchForm className="w-full sm:ml-auto sm:w-auto" /> */}
       </div>
     </header>
