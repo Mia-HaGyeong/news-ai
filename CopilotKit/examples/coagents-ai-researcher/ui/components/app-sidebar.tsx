@@ -27,6 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { SearchForm } from "./search-form"
 
 const data = {
   user: {
@@ -167,11 +168,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-semibold">경인일보</span>
+                  <span className="truncate text-xs">서울시스템X바벨브레인 서비스</span>
                 </div>
               </a>
             </SidebarMenuButton>
+            <SearchForm className="w-full mt-3 p-1" />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
