@@ -3,6 +3,7 @@ import { type LucideIcon } from "lucide-react"
 
 import {
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuButton,
@@ -21,11 +22,12 @@ export function NavServices({
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   return (
     <SidebarGroup {...props}>
+      <SidebarGroupLabel>K-INSIGHT 제공 기능</SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size="sm">
+              <SidebarMenuButton asChild>
                 <a href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>

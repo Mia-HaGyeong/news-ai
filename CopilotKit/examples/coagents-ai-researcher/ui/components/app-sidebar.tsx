@@ -3,9 +3,14 @@
 import * as React from "react"
 import {
   BookOpen,
+  FileJson,
+  FileEdit,
+  LucideFileSignature,
   Bot,
+  Braces,
   Command,
   Frame,
+  Folder,
   LifeBuoy,
   Map,
   PieChart,
@@ -14,7 +19,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavMain } from "@/components/nav-main"
+// import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
@@ -28,6 +33,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { SearchForm } from "./search-form"
+import { NavServices } from "./nav-services"
+import { NavFolders } from "./nav-folders"
 
 const data = {
   user: {
@@ -35,120 +42,178 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  navMain: [
+  navServices: [
     {
-      title: "Playground",
+      title: "문서 자동 작성 및 편집",
       url: "#",
-      icon: SquareTerminal,
+      icon: LucideFileSignature,
+    },
+    {
+      title: "메타데이터 추출",
+      url: "#",
+      icon: FileJson,
+    },
+  ],
+  navFolders: [
+    {
+      title: "새 폴더1",
+      url: "#",
+      icon: Folder,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "새 문서1",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "새 문서2",
           url: "#",
         },
         {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
+          title: "새 문서3",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "새 문서4",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "새 폴더2",
       url: "#",
-      icon: BookOpen,
+      icon: Folder,
+      isActive: true,
       items: [
         {
-          title: "Introduction",
+          title: "새 문서1",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "새 문서2",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "새 문서3",
           url: "#",
         },
       ],
     },
   ],
+  // navMain: [
+  //   {
+  //     title: "Playground",
+  //     url: "#",
+  //     icon: SquareTerminal,
+  //     isActive: true,
+  //     items: [
+  //       {
+  //         title: "History",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Starred",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Settings",
+  //         url: "#",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Models",
+  //     url: "#",
+  //     icon: Bot,
+  //     items: [
+  //       {
+  //         title: "Genesis",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Explorer",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Quantum",
+  //         url: "#",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Documentation",
+  //     url: "#",
+  //     icon: BookOpen,
+  //     items: [
+  //       {
+  //         title: "Introduction",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Get Started",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Tutorials",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Changelog",
+  //         url: "#",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Settings",
+  //     url: "#",
+  //     icon: Settings2,
+  //     items: [
+  //       {
+  //         title: "General",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Team",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Billing",
+  //         url: "#",
+  //       },
+  //       {
+  //         title: "Limits",
+  //         url: "#",
+  //       },
+  //     ],
+  //   },
+  // ],
+  // projects: [
+  //   {
+  //     name: "Design Engineering",
+  //     url: "#",
+  //     icon: Frame,
+  //   },
+  //   {
+  //     name: "Sales & Marketing",
+  //     url: "#",
+  //     icon: PieChart,
+  //   },
+  //   {
+  //     name: "Travel",
+  //     url: "#",
+  //     icon: Map,
+  //   },
+  // ],
   navSecondary: [
     {
-      title: "Support",
+      title: "서비스 안내",
       url: "#",
       icon: LifeBuoy,
     },
     {
-      title: "Feedback",
+      title: "문의하기",
       url: "#",
       icon: Send,
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 }
@@ -178,8 +243,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavServices items={data.navServices} />
+        <NavFolders items={data.navFolders} />
+        {/* <NavMain items={data.navMain} /> */}
+        {/* <NavProjects projects={data.projects} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
