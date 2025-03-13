@@ -1,6 +1,6 @@
 "use client";
 
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { ClerkProvider, SignInButton, SignedIn, SignedOut } from '@clerk/nextjs'; //UserButton
 import { ModelSelector } from "@/components/ModelSelector";
 import { ResearchWrapper } from "@/components/ResearchWrapper";
 import { ThemeSelector } from "@/components/ThemeSelector";
