@@ -24,7 +24,9 @@ import {
 // import { SearchForm } from "./search-form"
 // import { NavServices } from "./nav-services"
 import { NavFolders } from "./nav-folders"
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs" //, UserButton
+import { UserButton } from "./custom-user-button"
+
 
 const data = {
   navFolders: [
