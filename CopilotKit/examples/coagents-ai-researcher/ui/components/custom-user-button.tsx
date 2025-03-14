@@ -5,6 +5,12 @@ import { useUser, useClerk } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+  ArrowRightStartOnRectangleIcon,
+  CurrencyDollarIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline'
+import { Button } from './ui/button'
 
 export const UserButton = () => {
   const { signOut, openUserProfile } = useClerk()
@@ -20,14 +26,14 @@ export const UserButton = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Separator className="h-px bg-border" />
       <DropdownMenu.Trigger asChild>
-        <button className="flex flex-row items-center gap-2 p-2 drop-shadow-md">
+        <button className="flex flex-row items-center gap-3 p-2">
           {/* Your avatar, text, etc. */}
           <Image
             alt={user?.primaryEmailAddress?.emailAddress!}
             src={user?.imageUrl}
             width={30}
             height={30}
-            className="mr-2 rounded-full border border-border drop-shadow-sm"          
+            className="rounded-full"          
           />
           {user?.username ? user.username : user?.primaryEmailAddress?.emailAddress!}
         </button>
@@ -38,28 +44,40 @@ export const UserButton = () => {
           side="top"
           align="start"
           sideOffset={15}
-          className="z-50 ml-1 w-48 rounded-md border border-border bg-background px-3 py-1 text-foreground drop-shadow-2xl"
+          className="z-50 ml-1 w-48 rounded-md border border-border bg-background px-3 py-1 text-foreground"
         >
           <DropdownMenu.Label />
           <DropdownMenu.Group className="py-3">
             <DropdownMenu.Item asChild>
-              <button onClick={() => openUserProfile()} className="block w-full text-left p-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]">
+              <Button
+                onClick={() => openUserProfile()}
+                className="justify-start w-full p-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]"
+                variant="menu"
+                size="sm"
+              >
+                <UserCircleIcon className="mr-2 h-5 w-auto" />
                 계정
-              </button>
+              </Button>
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
-              <Link href="/subscriptions" className="block w-full p-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]">
-                구독 관리
+              <Link href="/subscriptions" passHref>
+                <Button className="justify-start w-full p-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]" variant="menu" size="sm">
+                  <CurrencyDollarIcon className="mr-2 h-5 w-auto" />
+                    구독 관리
+                </Button>
               </Link>
             </DropdownMenu.Item>
             <DropdownMenu.Separator className="my-1 h-px bg-border" />
             <DropdownMenu.Item asChild>
-              <button 
+              <Button 
                 onClick={() => signOut(() => router.push('/'))} 
-                className="block w-full p-1 text-left text-red-400 hover:bg-[hsl(var(--muted))]"
+                className="justify-start w-full p-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]"
+                variant="menu"
+                size="sm"
               >
+                <ArrowRightStartOnRectangleIcon className="mr-2 h-5 w-auto" />
                 로그아웃
-              </button>
+              </Button>
             </DropdownMenu.Item>
           </DropdownMenu.Group>
         </DropdownMenu.Content>

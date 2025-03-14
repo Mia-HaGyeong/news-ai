@@ -127,7 +127,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarFooter>
         <SignedOut>
-          <SignInButton />
+          <SignInButton>
+            <button className="flex border border-border justify-center m-1 p-1 hover:bg-[hsl(var(--border))]">
+              로그인 또는 회원가입
+            </button>
+          </SignInButton>
         </SignedOut>
         <SignedIn>
           {/* <NavUser user={data.user} /> */}
