@@ -27,7 +27,14 @@ const buttonVariants = cva(
           'hover:bg-stone-100',
           'hover:text-stone-800',
         ],
-        menu: ['bg-transparent', 'text-foreground'],
+        menu: [
+          'w-full',
+          'justify-start',
+          'bg-transparent',
+          'p-1',
+          'hover:bg-[hsl(var(--muted))]',
+          'hover:text-[hsl(var(--foreground))]',
+        ],
       },
       size: {
         default: "h-10 px-4 py-2",
