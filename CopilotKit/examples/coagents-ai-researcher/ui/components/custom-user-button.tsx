@@ -44,7 +44,7 @@ export const UserButton = () => {
           side="top"
           align="start"
           sideOffset={15}
-          className="z-50 ml-1 w-48 rounded-md border border-border bg-background px-1 py-0.6 text-foreground"
+          className="z-50 ml-1 w-40 rounded-md border border-border bg-background px-2 py-0.6 text-foreground"
         >
           <DropdownMenu.Label />
           <DropdownMenu.Group className="py-3">
@@ -52,7 +52,7 @@ export const UserButton = () => {
               <Button
                 onClick={() => openUserProfile()}
                 variant="menu"
-                size="sm"
+                size="dropdown"
               >
                 <UserCircleIcon className="mr-2 h-5 w-auto" />
                 계정
@@ -60,18 +60,18 @@ export const UserButton = () => {
             </DropdownMenu.Item>
             <DropdownMenu.Item asChild>
               <Link href="/subscriptions" passHref>
-                <Button variant="menu" size="sm">
+                <Button variant="menu" size="dropdown">
                   <CurrencyDollarIcon className="mr-2 h-5 w-auto" />
                     구독 관리
                 </Button>
               </Link>
             </DropdownMenu.Item>
-            <DropdownMenu.Separator className="mx-2 my-1 h-px bg-border" />
+            <DropdownMenu.Separator className="mx-0.4 my-1 h-px bg-border" />
             <DropdownMenu.Item asChild>
               <Button 
                 onClick={() => signOut(() => router.push('/'))} 
                 variant="menu"
-                size="sm"
+                size="dropdown"
               >
                 <ArrowRightStartOnRectangleIcon className="mr-2 h-5 w-auto" />
                 로그아웃
